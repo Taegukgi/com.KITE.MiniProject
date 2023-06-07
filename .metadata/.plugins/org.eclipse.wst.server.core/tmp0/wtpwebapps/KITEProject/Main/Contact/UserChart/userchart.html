@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>User Chart</title>
+	<link rel="stylesheet" href="../CSS/userchart.css">
+	<script src="../JS/userchart.js"></script>
+	
+</head>
+<body>
+	<table class="Customer-care-card">
+		<caption>고객 관리 카드</caption>
+
+		<tbody>
+			<tr>
+				<th><strong>계 약 자</strong></th>
+				<td colspan="2">
+					<label for="contractor"></label>
+					<input type="text" id="contractor" size="30" placeholder="Enter contractor name ">
+				</td>
+				
+				<th><strong>주 민 번 호</strong></th>
+				<td colspan="2">
+					<label for="resident-number"></label>
+					<input type="text" id="resident-number" size="30" placeholder="Enter resident-number">
+				</td>
+				
+			</tr>
+			<tr>
+				<th><strong>휴 대 폰</strong></th>
+				<td colspan="2">
+					<label for="mobile-phone"></label>
+          			<input type="tel" id="mobile-phone" size="30" placeholder="Enter mobile phone">
+				</td>
+				
+				<th><strong>이 메 일</strong></th>
+				<td colspan="2">
+					<label for="email"></label>
+          			<input type="email" id="email" size="30" placeholder="Enter email">
+				</td>
+				
+			</tr>
+			<tr>
+				<th><strong>직 업</strong></th>
+				<td colspan="2">
+					<label for="occupation"></label>
+          			<input type="occupation" id="occupation" size="30" placeholder="Enter occupation">
+				</td>
+				
+				<th><strong>운 전</strong></th>
+				<td colspan="2">
+					<label for="drive"></label>
+          			<input type="drive" id="drive" size="30" placeholder="Enter drive">
+				</td>
+				
+			</tr>
+			<tr>
+				<th rowspan="2">주 소</th>
+				<td colspan="5">자 택:
+					<label for="home"></label>
+          			<input type="home" id="home" size="110" placeholder="Enter home">
+				</td>
+			
+			</tr>
+			<tr>
+				<td colspan="5">회 사:
+					<label for="company"></label>
+          			<input type="company" id="company" size="110" placeholder="Enter company">
+				</td>
+			
+			</tr>
+			<tr>
+				<th><strong>수 익 자</strong></th>
+				<td colspan="2">
+					<label for="beneficiary"></label>
+          			<input type="text" id="beneficiary" size="30" placeholder="Enter beneficiary">
+				</td>
+				
+				<th><strong>주 민 번 호</strong></th>
+				<td colspan="2">
+					<label for="resident-number"></label>
+          			<input type="text" id="resident-number" size="30" placeholder="Enter resident-number">
+				</td>
+				
+			</tr>
+			<tr>
+				<th><strong>휴 대 폰</strong></th>
+				<td colspan="2">
+					<label for="mobile-phone"></label>
+          			<input type="tel" id="mobile-phone" size="30" placeholder="Enter mobile-phone">
+				</td>
+				
+				<th><strong>이 메 일</strong></th>
+				<td colspan="2">
+					<label for="email"></label>
+          			<input type="email" id="email" size="30" placeholder="Enter email">
+				</td>
+				
+			</tr>
+			<tr>
+				<th><strong>직 업</strong></th>
+				<td colspan="2">
+					<label for="occupation"></label>
+          			<input type="text" id="occupation" size="30" placeholder="Enter occupation">
+				</td>
+				
+				<th><strong>본인과 관계</strong></th>
+				<td colspan="2">
+					<label for="realationship"></label>
+          			<input type="text" id="realationship" size="30" placeholder="Enter realationship">
+				</td>
+				
+			</tr>
+			<tr>
+				<th><strong>계좌번호</strong></th>
+				<td colspan="2">
+					<label for="bank-account-number"></label>
+          			<input type="number" id="bank-account-number" size="30" placeholder="Enter bank-account-number">
+				</td>
+				<th><strong>이체 희망일</strong></th>
+				<td>이체 희망일
+					<label for="Desired transfer date"></label>
+          			<input type="date" id="Desired transfer date" size="30" placeholder="Enter Desired transfer date">
+				</td>
+			</tr>
+			<tr>
+				<th rowspan="2"><strong>알릴의무</strong></th>
+				<td colspan="5">
+					<label for="duty-to-inform"></label>
+          			<input type="text" id="duty-to-inform" size="120" placeholder="Enter duty-to-inform">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<label for="duty-to-inform"></label>
+          			<input type="text" id="duty-to-inform" size="120" placeholder="Enter duty-to-inform">
+				</td>
+			</tr>
+			<tr>
+				<th rowspan="3"><strong>기타<br>주요사항</strong></th>
+				<td colspan="5">
+					<label for="highlights"></label>
+          			<input type="text" id="highlights" size="120" placeholder="Enter highlights">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<label for="highlights"></label>
+          			<input type="text" id="highlights" size="120" placeholder="Enter highlights">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<label for="highlights"></label>
+          			<input type="text" id="highlights" size="120" placeholder="Enter highlights">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="button-container">
+		<button type="button" id="save-btn">Save</button>
+		<button type="button" id="print-btn" onclick="window.print()">Print</button>
+		<button type="button" id="edit-btn">Edit</button>
+	</div>
+</body>
+</html>

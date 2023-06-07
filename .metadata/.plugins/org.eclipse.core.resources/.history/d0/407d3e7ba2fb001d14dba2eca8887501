@@ -1,0 +1,7 @@
+package com.KITE.SignUP;
+
+
+@WebServlet("/Member/SignUp/VerifyEmailServlet")
+public class EmailVerificationCodeSendController {
+
+}

@@ -1,0 +1,33 @@
+package com.KITE.SignUP;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/Member/SignUp/VerifyEmailServlet")
+public class EmailVerificationCodeSendController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String email = request.getParameter("email");
+		String verificationCode = generateVerificationCode();
+		try {
+			
+			String message = "Your verification code is: " + verificationCode;
+			EmailUtil.sendEmail(email, "Email Verification", message);
+			
+			request.getSession().setAttribute(verificationCode, verificationCode);
+			respone
+		}
+		
+		
+	}
+	
+	
+	
+
+}

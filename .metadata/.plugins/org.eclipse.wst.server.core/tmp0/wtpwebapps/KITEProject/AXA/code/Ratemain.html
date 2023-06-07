@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="../code/AXA.css" />
+  </head>
+  <body>
+    <h1>Compound Interest Calculator/Fulfillment Rate</h1>
+    <input
+      type="number"
+      id="initialAmount"
+      placeholder="Enter initial amount"
+    />
+    <input
+      type="number"
+      id="interestRate"
+      placeholder="Enter annual interest rate (%)"
+    />
+    <input
+      type="number"
+      id="contribution"
+      placeholder="Enter regular contribution"
+    />
+    <input
+      type="number"
+      id="desiredAmount"
+      placeholder="Enter desired amount"
+    />
+    <input
+      type="number"
+      id="compoundingFrequency"
+      placeholder="Enter compounding frequency (e.g., 12 for monthly)"
+    />
+    <input
+      type="date"
+      id="contractCommencementDate"
+      placeholder="Enter contract commencement date (yyyy-mm-dd)"
+    />
+    <input type="date" id="endDate" placeholder="Enter end date (yyyy-mm-dd)" />
+    <button onclick="calculate()">Calculate</button>
+    <div id="result"></div>
+
+    <script>
+      function calculate() {
+        const initialAmount = parseFloat(
+          document.getElementById("initialAmount").value
+        );
+        const interestRate =
+          parseFloat(document.getElementById("interestRate").value) / 100;
+        const contribution = parseFloat(
+          document.getElementById("contribution").value
+        );
+        const desiredAmount = parseFloat(
+          document.getElementById("desiredAmount").value
+        );
+        const compoundingFrequency = parseFloat(
+          document.getElementById("compoundingFrequency").value
+        );
+
+        const contractCommencementDate = new Date(
+          document.getElementById("contractCommencementDate").value
+        );
+        const endDate = new Date(document.getElementById("endDate").value);
+
+        const timeDifference =
+          endDate.getTime() - contractCommencementDate.getTime();
+        const calculatedYears = timeDifference / (1000 * 60 * 60 * 24 * 365.25);
+
+        const n = compoundingFrequency;
+        const ratePerPeriod = interestRate / n;
+        const totalPeriods = calculatedYears * n;
+
+        const futureValue =
+          initialAmount * Math.pow(1 + ratePerPeriod, totalPeriods) +
+          (contribution * (Math.pow(1 + ratePerPeriod, totalPeriods) - 1)) /
+            ratePerPeriod;
+        const fulfillmentRate = (futureValue / desiredAmount) * 100;
+
+        document.getElementById(
+          "result"
+        ).innerHTML = `<p>Future value: ${futureValue.toFixed(
+          2
+        )}</p><p>Fulfillment rate: ${fulfillmentRate.toFixed(2)}%</p>`;
+      }
+    </script>
+  </body>
+</html>
